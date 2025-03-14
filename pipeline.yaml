@@ -3,7 +3,10 @@ trigger:
  
 pool:
   vmImage: ubuntu-latest
- 
+
+variables:
+   -group: Platform-Versions 
+
 steps:
  
 - task: TerraformCLI@1
