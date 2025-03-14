@@ -13,12 +13,11 @@ steps:
   inputs:
     terraformVersion: '1.10.5'
 
-- task: TerraformCLI@1
+- task: TerraformCLI@2
   inputs:
     command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/AVM-TERRAFORM-LABS'
     backendType: 'azurerm'
-    allowTelemetryCollection: true
+    allowTelemetryCollection: false
 
  
 - task: TerraformCLI@1
