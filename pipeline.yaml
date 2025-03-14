@@ -4,15 +4,15 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-   -group: Platform-Versions 
+#variables:
+#   -group: Platform-Versions 
 
 steps:
  
 - task: TerraformCLI@1
   displayName: 'Install Terraform'
   inputs:
-    terraformVersion: '$(terraform)'
+    terraformVersion: '1.10.5'
  
 
 - task: TerraformCLI@1
