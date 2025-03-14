@@ -1,0 +1,27 @@
+trigger:
+- main
+ 
+pool:
+  vmImage: ubuntu-latest
+ 
+steps:
+ 
+- task: TerraformCLI@1
+  displayName: 'Install Terraform'
+  inputs:
+    terraformVersion: '$(terraform)'
+ 
+
+- task: TerraformCLI@1
+  inputs:
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/AVM-TERRAFORM-LABS'
+    backendType: 'azurerm'
+    allowTelemetryCollection: true
+
+ 
+- task: TerraformCLI@1
+  inputs:
+    command: 'plan'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/AVM-TERRAFORM-LABS'
+    allowTelemetryCollection: true
